@@ -1,1 +1,2 @@
 ini adalah repository iot smarthome
+smarthome ini menggunakan PIR untuk mendeteksi jumlah orang, bila ada orang yang masuk maka sitem akan menyala bila tidak orang maka sistem mati otomatis   
