@@ -8,8 +8,6 @@ WiFiClient net;
 MQTTClient client;
 DHTesp dhtSensor;
 
-const char ssid[] = "Redmi 9t";
-const char pass[] = "1desember2005";
 
 float suhu, kelembapan;
 int jumlahOrang = 2; //data palsu
