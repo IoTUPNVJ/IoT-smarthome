@@ -283,6 +283,17 @@
         "className": ""
     },
     {
+        "id": "1200e2d56b089375",
+        "type": "ui_group",
+        "name": "Auto / Manual",
+        "tab": "208fb9c37be52648",
+        "order": 3,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
         "id": "b570ac039eefe50d",
         "type": "mqtt in",
         "z": "c13746f9bcfb86b9",
@@ -397,10 +408,12 @@
         "offcolor": "",
         "animate": false,
         "className": "",
-        "x": 740,
-        "y": 340,
+        "x": 180,
+        "y": 1000,
         "wires": [
-            []
+            [
+                "99ae13d664bfc869"
+            ]
         ]
     },
     {
@@ -421,7 +434,7 @@
         "fontSize": 16,
         "color": "#000000",
         "x": 650,
-        "y": 680,
+        "y": 760,
         "wires": []
     },
     {
@@ -539,40 +552,8 @@
         "fontSize": 16,
         "color": "#000000",
         "x": 650,
-        "y": 620,
+        "y": 700,
         "wires": []
-    },
-    {
-        "id": "4ad66d7f7c982779",
-        "type": "ui_switch",
-        "z": "c13746f9bcfb86b9",
-        "name": "",
-        "label": "switch jendela 2",
-        "tooltip": "",
-        "group": "728cbc97d06c5b09",
-        "order": 3,
-        "width": 0,
-        "height": 0,
-        "passthru": true,
-        "decouple": "false",
-        "topic": "payload",
-        "topicType": "msg",
-        "style": "",
-        "onvalue": "true",
-        "onvalueType": "bool",
-        "onicon": "",
-        "oncolor": "",
-        "offvalue": "false",
-        "offvalueType": "bool",
-        "officon": "",
-        "offcolor": "",
-        "animate": false,
-        "className": "",
-        "x": 400,
-        "y": 1060,
-        "wires": [
-            []
-        ]
     },
     {
         "id": "7f2c56603ddb647c",
@@ -617,7 +598,7 @@
         "font": "",
         "fontSize": 16,
         "color": "#000000",
-        "x": 630,
+        "x": 650,
         "y": 860,
         "wires": []
     },
@@ -661,8 +642,8 @@
         "font": "",
         "fontSize": 16,
         "color": "#000000",
-        "x": 640,
-        "y": 760,
+        "x": 620,
+        "y": 620,
         "wires": []
     },
     {
@@ -722,7 +703,7 @@
         "rh": 0,
         "inputs": 0,
         "x": 180,
-        "y": 660,
+        "y": 740,
         "wires": [
             [
                 "e7b5eafad4d0e387",
@@ -743,7 +724,7 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 150,
+        "x": 170,
         "y": 860,
         "wires": [
             [
@@ -765,7 +746,7 @@
         "rh": 0,
         "inputs": 0,
         "x": 200,
-        "y": 760,
+        "y": 620,
         "wires": [
             [
                 "3fb9d131d90616d1"
@@ -777,7 +758,7 @@
         "type": "mqtt out",
         "z": "c13746f9bcfb86b9",
         "name": "",
-        "topic": "smarthomeIoT/kontrolkecepatan",
+        "topic": "smarthomeIoT/kecepatan",
         "qos": "0",
         "retain": "",
         "respTopic": "",
@@ -809,7 +790,7 @@
         "max": "3",
         "step": 1,
         "className": "",
-        "x": 130,
+        "x": 150,
         "y": 940,
         "wires": [
             [
@@ -831,6 +812,76 @@
         "statusType": "auto",
         "x": 360,
         "y": 500,
+        "wires": []
+    },
+    {
+        "id": "99ae13d664bfc869",
+        "type": "mqtt out",
+        "z": "c13746f9bcfb86b9",
+        "name": "",
+        "topic": "smarthomeIoT/jendela",
+        "qos": "0",
+        "retain": "true",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "6cec62dbab95ce82",
+        "x": 680,
+        "y": 1000,
+        "wires": []
+    },
+    {
+        "id": "abc10ba4da9cc4f9",
+        "type": "ui_switch",
+        "z": "c13746f9bcfb86b9",
+        "name": "",
+        "label": "switch auto manual",
+        "tooltip": "",
+        "group": "1200e2d56b089375",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "payload",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "auto",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "manual",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 210,
+        "y": 1100,
+        "wires": [
+            [
+                "920f11301303f5d2"
+            ]
+        ]
+    },
+    {
+        "id": "920f11301303f5d2",
+        "type": "mqtt out",
+        "z": "c13746f9bcfb86b9",
+        "name": "",
+        "topic": "smarthomeIoT/mode",
+        "qos": "1",
+        "retain": "true",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "6cec62dbab95ce82",
+        "x": 680,
+        "y": 1100,
         "wires": []
     }
 ]
